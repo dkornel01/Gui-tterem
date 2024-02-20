@@ -1,0 +1,16 @@
+Gyümölcs leves: 3000
+Bécsi Szelet: 2500
+Linzer: 3500
+
+Hús leves: 2000
+Bécsi Szelet: 2500
+Linzer: 3500
+
+Hús leves: 2000
+Somlói Galuska: 2000
+Linzer: 3500
+
+Gyümölcs leves: 3000
+Bécsi Szelet: 2500
+Csoki Totra: 4000
+

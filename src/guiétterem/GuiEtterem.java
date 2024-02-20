@@ -4,8 +4,14 @@
  */
 package guiétterem;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
@@ -53,6 +59,7 @@ public class GuiEtterem extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        kiirás2 = new javax.swing.JButton();
         jDesktopPane2 = new javax.swing.JDesktopPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         Nyomtatás = new javax.swing.JButton();
@@ -112,14 +119,14 @@ public class GuiEtterem extends javax.swing.JFrame {
         jScrollPane1.setViewportView(előétel);
 
         főétel.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Bécsi Szelet", "Somlói Galuska", " " };
+            String[] strings = { "Bécsi Szelet: 2500", "Somlói Galuska: 2000", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
         jScrollPane2.setViewportView(főétel);
 
         desszert.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Csoki Totra", "Linzer" };
+            String[] strings = { "Csoki Totra: 4000", "Linzer: 3500" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -178,6 +185,13 @@ public class GuiEtterem extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
+        kiirás2.setText("Kiirás");
+        kiirás2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kiirás2ActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(uj, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(felvétel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(torles, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -189,6 +203,7 @@ public class GuiEtterem extends javax.swing.JFrame {
         jDesktopPane1.setLayer(ujétel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(oszlop, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(kiirás2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -214,9 +229,11 @@ public class GuiEtterem extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(felvétel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(88, 88, 88)
                         .addComponent(torles)
-                        .addGap(173, 173, 173)
+                        .addGap(87, 87, 87)
+                        .addComponent(kiirás2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(uj)))
                 .addContainerGap())
         );
@@ -243,7 +260,8 @@ public class GuiEtterem extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(felvétel)
                     .addComponent(torles)
-                    .addComponent(uj))
+                    .addComponent(uj)
+                    .addComponent(kiirás2))
                 .addContainerGap())
         );
 
@@ -270,6 +288,11 @@ public class GuiEtterem extends javax.swing.JFrame {
         });
 
         KiIrás.setText("KiIrás");
+        KiIrás.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KiIrásActionPerformed(evt);
+            }
+        });
 
         jDesktopPane2.setLayer(jLayeredPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane2.setLayer(Nyomtatás, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -314,7 +337,7 @@ public class GuiEtterem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -408,6 +431,57 @@ public class GuiEtterem extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_felvételActionPerformed
 
+    private void kiirás2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kiirás2ActionPerformed
+        String txt="arak.txt";
+        Path path=Paths.get(txt);
+        String kimenet="";
+        ListModel<String>kiv=előétel.getModel();
+        kimenet = betoltes(kiv, kimenet);
+        kiv=főétel.getModel();
+        kimenet = betoltes(kiv, kimenet);
+        kiv=desszert.getModel();
+        kimenet = betoltes(kiv, kimenet);
+        try {
+            Files.write(path, kimenet.getBytes());
+        } catch (IOException ex) {
+            Logger.getLogger(GuiEtterem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_kiirás2ActionPerformed
+
+    private void KiIrásActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KiIrásActionPerformed
+       String txt="asztalok.txt";
+        Path path=Paths.get(txt);
+        String kimenet="";
+        List<String>tarto=desk1;
+        kimenet=asztal_osszerakas(tarto, kimenet);
+        tarto=desk2;
+        kimenet=asztal_osszerakas(tarto, kimenet);
+        tarto=desk3;
+        kimenet=asztal_osszerakas(tarto, kimenet);
+        tarto=desk4;
+        kimenet=asztal_osszerakas(tarto, kimenet);
+        try {
+            Files.write(path, kimenet.getBytes());
+        } catch (IOException ex) {
+            Logger.getLogger(GuiEtterem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_KiIrásActionPerformed
+
+    private String asztal_osszerakas(List<String> tarto, String kimenet) {
+        for (int i=0;i<tarto.size();i++){
+            kimenet+=tarto.get(i)+"\n";
+        }
+        kimenet+="\n";
+        return kimenet;
+    }
+
+    private String betoltes(ListModel<String> kiv, String kimenet) {
+        for (int i=0;i<=kiv.getSize()-1;i++){
+            kimenet+=kiv.getElementAt(i)+"\n";
+        }
+        return kimenet;
+    }
+
     private void desk_toltes(List<String> desk) {
         desk.add(előétel.getSelectedValue());
         desk.add(főétel.getSelectedValue());
@@ -473,6 +547,7 @@ public class GuiEtterem extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton kiirás2;
     private javax.swing.JList<String> kiválasztott;
     private javax.swing.JComboBox<String> oszlop;
     private javax.swing.JButton torles;

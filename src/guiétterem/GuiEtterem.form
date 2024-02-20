@@ -34,7 +34,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" pref="521" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -82,9 +82,11 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="felvétel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                               <Component id="torles" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                              <Component id="kiirás2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="uj" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -119,6 +121,7 @@
                           <Component id="felvétel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="torles" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="uj" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="kiirás2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -303,8 +306,8 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="3">
-                            <StringItem index="0" value="B&#xe9;csi Szelet"/>
-                            <StringItem index="1" value="Soml&#xf3;i Galuska"/>
+                            <StringItem index="0" value="B&#xe9;csi Szelet: 2500"/>
+                            <StringItem index="1" value="Soml&#xf3;i Galuska: 2000"/>
                             <StringItem index="2" value=" "/>
                           </StringArray>
                         </Property>
@@ -326,8 +329,8 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Csoki Totra"/>
-                            <StringItem index="1" value="Linzer"/>
+                            <StringItem index="0" value="Csoki Totra: 4000"/>
+                            <StringItem index="1" value="Linzer: 3500"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -378,6 +381,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="kiir&#xe1;s2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kiir&#xe1;s"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kiir&#xe1;s2ActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JDesktopPane" name="jDesktopPane2">
@@ -454,6 +465,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="KiIr&#xe1;s"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KiIr&#xe1;sActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
