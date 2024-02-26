@@ -76,9 +76,11 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="oszlop" min="-2" max="-2" attributes="0"/>
-                                          <Component id="ár" min="-2" max="-2" attributes="0"/>
                                           <Component id="ujétel" min="-2" pref="400" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="oszlop" alignment="0" pref="100" max="32767" attributes="0"/>
+                                              <Component id="ár" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -89,7 +91,7 @@
                               <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                               <Component id="torles" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                              <Component id="kiirás2" min="-2" max="-2" attributes="0"/>
+                              <Component id="kiIras1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="uj" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -125,7 +127,7 @@
                           <Component id="felvétel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="torles" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="uj" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="kiirás2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="kiIras1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -285,8 +287,8 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Gy&#xfc;m&#xf6;lcs leves: 3000"/>
-                            <StringItem index="1" value="H&#xfa;s leves: 2000"/>
+                            <StringItem index="0" value="Gy&#xfc;m&#xf6;lcs leves|3000"/>
+                            <StringItem index="1" value="H&#xfa;s leves|2000"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -307,8 +309,8 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="B&#xe9;csi Szelet: 2500"/>
-                            <StringItem index="1" value="Soml&#xf3;i Galuska: 2000"/>
+                            <StringItem index="0" value="B&#xe9;csi Szelet|2500"/>
+                            <StringItem index="1" value="Soml&#xf3;i Galuska|2000"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -329,8 +331,8 @@
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                           <StringArray count="2">
-                            <StringItem index="0" value="Csoki Totra: 4000"/>
-                            <StringItem index="1" value="Linzer: 3500"/>
+                            <StringItem index="0" value="Csoki Totra|4000"/>
+                            <StringItem index="1" value="Linzer|3500"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -381,12 +383,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="kiir&#xe1;s2">
+            <Component class="javax.swing.JButton" name="kiIras1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kiir&#xe1;s"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kiir&#xe1;s2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kiIras1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -407,7 +409,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLayeredPane1" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="KiIrás" min="-2" max="-2" attributes="0"/>
+                              <Component id="KiIras2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="464" max="32767" attributes="0"/>
                               <Component id="Nyomtatás" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -424,7 +426,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Nyomtatás" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="KiIrás" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="KiIras2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -461,12 +463,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Nyomtat&#xe1;sActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="KiIr&#xe1;s">
+            <Component class="javax.swing.JButton" name="KiIras2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="KiIr&#xe1;s"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KiIr&#xe1;sActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KiIras2ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -494,16 +496,16 @@
                                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="összes_nyomtatás" min="-2" max="-2" attributes="0"/>
+                                          <Component id="osszes_nyomtatas" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="összes_előnézet" min="-2" pref="124" max="-2" attributes="0"/>
+                                          <Component id="osszes_elonezet" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="takaritas" alignment="0" min="-2" pref="290" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -511,6 +513,11 @@
                       </Group>
                       <Component id="jScrollPane5" min="-2" pref="289" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="253" max="-2" attributes="0"/>
+                      <Component id="konzolos_kiiras" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -524,8 +531,8 @@
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="összes_előnézet" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="összes_nyomtatás" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="osszes_elonezet" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="osszes_nyomtatas" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="takaritas" min="-2" max="-2" attributes="0"/>
@@ -533,7 +540,9 @@
                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="57" max="32767" attributes="0"/>
+                      <Component id="konzolos_kiiras" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -640,15 +649,18 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="&#xf6;sszes_nyomtat&#xe1;s">
+            <Component class="javax.swing.JButton" name="osszes_nyomtatas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xd6;sszes nyomtat&#xe1;s"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="&#xf6;sszes_el&#x151;n&#xe9;zet">
+            <Component class="javax.swing.JButton" name="osszes_elonezet">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#xf6;sszes el&#x151;n&#xe9;zet"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="osszes_elonezetActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="takaritas">
               <Properties>
@@ -735,6 +747,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="konzolos_kiiras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Konzolos_kiiras"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="konzolos_kiirasActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
